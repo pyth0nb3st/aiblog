@@ -13,14 +13,14 @@ const Header = () => {
   }
 
   return (
-    <header className={headerClass}>
+    <header className={`${headerClass} bg-white/70 backdrop-blur-sm dark:bg-gray-950/80`}>
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
-          <div className="mr-3">
+          <div className="mr-3 transition-transform hover:scale-110">
             <Logo />
           </div>
           {typeof siteMetadata.headerTitle === 'string' ? (
-            <div className="hidden h-6 text-2xl font-semibold sm:block">
+            <div className="ai-gradient-text hidden h-6 text-2xl font-semibold sm:block">
               {siteMetadata.headerTitle}
             </div>
           ) : (
@@ -36,7 +36,7 @@ const Header = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className="hover:text-primary-500 dark:hover:text-primary-400 m-1 font-medium text-gray-900 dark:text-gray-100"
+                className="hover:text-primary-500 dark:hover:text-primary-400 m-1 font-medium text-gray-900 transition-all hover:scale-105 dark:text-gray-100"
               >
                 {link.title}
               </Link>
